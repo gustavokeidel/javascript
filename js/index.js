@@ -8,7 +8,7 @@ operadores de sequencia
 operadores de comparação
 operadores de condicional(ternario)
 operadores logicos
-*/
+
 //alert('Seja Bem Vindo');
 
 document.getElementById('texto') .innerHTML = "Meu primeiro texto em JS"
@@ -64,6 +64,16 @@ carro.buzina();
 document.write(carro.completo());
 console.log(carro.completo());
 */
+
+var idade, eleitor, resultado
+
+idade=59;
+
+eleitor = (idade < 18) ? "não, não é eleitor" : "Sim, eleitor"
+resultado = (idade > 60 && idade <70);
+
+alert(' A resposta é: ' +eleitor+ ' a idade dele é de: ' + idade + resultado);
+
 
 
 function eventoClick(){
