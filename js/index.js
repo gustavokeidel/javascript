@@ -63,7 +63,7 @@ return "A marca é " +this.marca + " e o modelo é " + this.modelo}
 carro.buzina();
 document.write(carro.completo());
 console.log(carro.completo());
-*/
+
 
 var idade, eleitor, resultado
 
@@ -74,8 +74,31 @@ resultado = (idade > 60 && idade <70);
 
 alert(' A resposta é: ' +eleitor+ ' a idade dele é de: ' + idade + resultado);
 
-
-
+}
 function eventoClick(){
 documento.write ('teste botao');
 }
+*/
+
+function buscarCEP(){   
+let input = document.getElementById('cep').value;
+console.log(input);
+
+
+const ajax = new XMLHttpRequest();
+ajax.open('GET' , 'https://viacep.com.br/ws/'+ input + '/json/');
+ajax.send();
+
+ajax.onload = function (){
+document.getElementById('area').innerHTML = this.responseText;
+
+let obj = JSON.parse(this.responseText);
+let logradouro = obj.logradouro;
+let cidade = obj.localidade;
+let estado = obj.uf;
+
+document.getElementById('area').innerHTML = "Logradouro:" + logradouro + " <br> Cidade: " + cidade + "<br> Estado: "+ estado ; 
+
+}
+}
+/*}*/
